@@ -1,7 +1,7 @@
 ## 소개
 
 <div align="center">
-  <img src="assets/cat-profile.svg" alt="Cat profile" width="260" />
+  <img src="assets/cat-profile.svg" alt="Cat profile" width="320" />
 </div>
 
 | 항목 | 내용 |
