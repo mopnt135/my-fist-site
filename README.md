@@ -1,7 +1,7 @@
 ## 소개
 
 <div align="center">
-  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Profile" width="220" />
+  <img src="assets/cat-profile.svg" alt="Cat profile" width="260" />
 </div>
 
 | 항목 | 내용 |
