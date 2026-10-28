@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웨비나 신청</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+      color: #fff;
+      text-align: center;
+      padding: 32px 16px;
+    }
+    .card {
+      width: 100%;
+      max-width: 520px;
+      padding: 40px 36px;
+      background: #000;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 32px rgba(255, 255, 255, 0.15);
+    }
+    .hero {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 0 auto 24px;
+      border-radius: 12px;
+    }
+    #logo { display: none; max-width: 260px; }
+    .label {
+      display: inline-block;
+      padding: 4px 14px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: 2rem; margin-bottom: 12px; line-height: 1.3; }
+    .desc { font-size: 1rem; color: #ccc; line-height: 1.6; margin-bottom: 20px; }
+    .info {
+      list-style: none;
+      margin-bottom: 28px;
+      padding: 14px 0;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+      font-size: 0.95rem;
+      color: #ddd;
+      line-height: 1.9;
+    }
+    form { display: flex; flex-direction: column; gap: 12px; }
+    input {
+      padding: 14px 16px;
+      font-size: 1rem;
+      color: #fff;
+      background: #000;
+      border: 1px solid #666;
+      border-radius: 10px;
+      outline: none;
+    }
+    input::placeholder { color: #888; }
+    input:focus { border-color: #fff; }
+    button {
+      margin-top: 8px;
+      padding: 14px 28px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      background: #fff;
+      color: #000;
+      cursor: pointer;
+      transition: transform 0.15s, background 0.2s, color 0.2s;
+    }
+    button:hover { transform: scale(1.03); background: #000; color: #fff; }
+    .done { display: none; padding: 20px 0; }
+    .done .check {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      font-size: 2.2rem;
+      line-height: 68px;
+    }
+    .done h2 { font-size: 1.6rem; margin-bottom: 10px; }
+    .done p { color: #ccc; line-height: 1.6; }
+    .card.submitted .apply { display: none; }
+    .card.submitted .done { display: block; }
+  </style>
+</head>
+<body>
+  <main class="card" id="card">
+
+    <!-- 1순위: 같은 폴더의 webinar.png / 실패하면 아래 SVG 로고 표시 -->
+    <img class="hero" id="photo" src="webinar.png" alt="웨비나 대표 이미지"
+         onerror="this.style.display='none'; document.getElementById('logo').style.display='block';">
+
+    <svg class="hero" id="logo" viewBox="0 0 400 400" role="img" aria-label="헬멧 쓴 고양이 로고">
+      <defs>
+        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="6" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <rect width="400" height="400" fill="#000"/>
+      <g filter="url(#glow)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+        <!-- 귀 -->
+        <path d="M 80 150 L 72 55 L 152 100" stroke-width="8"/>
+        <path d="M 320 150 L 328 55 L 248 100" stroke-width="8"/>
+        <!-- 헬멧 외곽 -->
+        <path d="M 70 190 C 70 110, 130 85, 200 85 C 270 85, 330 110, 330 190 C 330 260, 312 310, 292 340 C 272 365, 232 375, 200 375 C 168 375, 128 365, 108 340 C 88 310, 70 260, 70 190 Z" stroke-width="9"/>
+        <!-- 바이저 -->
+        <rect x="105" y="170" width="190" height="115" rx="38" stroke="#e5e5e5" stroke-width="12"/>
+      </g>
+      <!-- 얼굴 -->
+      <circle cx="173" cy="222" r="9" fill="#fff"/>
+      <circle cx="227" cy="222" r="9" fill="#fff"/>
+      <path d="M 192 238 L 208 238 L 200 247 Z" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M 177 252 Q 188 267 200 250 Q 212 267 223 252" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <section class="apply">
+      <span class="label">WEBINAR</span>
+      <h1>온라인 웨비나에<br>초대합니다</h1>
+      <p class="desc">전문가와 함께하는 라이브 세션입니다.<br>아래에 정보를 남기고 참가를 신청해 주세요.</p>
+
+      <ul class="info">
+        <li>일시: 2025년 0월 0일 (요일) 오후 7:00</li>
+        <li>장소: 온라인 (Zoom)</li>
+        <li>참가비: 무료</li>
+      </ul>
+
+      <form id="form">
+        <input type="text" name="name" placeholder="이름" required>
+        <input type="email" name="email" placeholder="이메일" required>
+        <button type="submit">웨비나 신청하기</button>
+      </form>
+    </section>
+
+    <section class="done" aria-live="polite">
+      <div class="check">✓</div>
+      <h2>신청이 완료되었습니다!</h2>
+      <p><span id="who"></span>님, 신청해 주셔서 감사합니다.<br>입력하신 이메일로 참여 안내를 보내드릴게요.</p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('who').textContent = this.elements['name'].value;
+      document.getElementById('card').classList.add('submitted');
+    });
+  </script>
+</body>
+</html>
