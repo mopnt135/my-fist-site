@@ -1,0 +1,52 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cat profile illustration">
+  <rect width="600" height="600" fill="#ffffff"/>
+
+  <!-- Ears -->
+  <path d="M150 180 L90 40 L225 130 Z" fill="#000000"/>
+  <path d="M450 180 L510 40 L375 130 Z" fill="#000000"/>
+  <path d="M120 160 L170 110 L187 155 Z" fill="#ffffff"/>
+  <path d="M480 160 L430 110 L413 155 Z" fill="#ffffff"/>
+
+  <!-- Head -->
+  <path d="M120 170 C120 80, 195 35, 300 35 C405 35, 480 80, 480 170
+           L480 330 C480 430, 405 500, 300 500
+           C195 500, 120 430, 120 330 Z" fill="#000000"/>
+
+  <!-- White forehead and cheeks -->
+  <path d="M200 150 C220 105, 250 80, 300 80 C350 80, 380 105, 400 150
+           L410 260 C385 295, 355 315, 300 328 C245 315, 215 295, 190 260 Z" fill="#ffffff"/>
+
+  <!-- White muzzle -->
+  <path d="M220 320 C240 370, 260 395, 300 395 C340 395, 360 370, 380 320
+           L370 430 C340 470, 260 470, 230 430 Z" fill="#ffffff"/>
+
+  <!-- Nose -->
+  <path d="M300 335 L285 360 L300 380 L315 360 Z" fill="#000000"/>
+
+  <!-- Mouth -->
+  <path d="M255 400 C273 435, 285 450, 300 450 C315 450, 327 435, 345 400" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round"/>
+  <path d="M237 405 C255 425, 271 430, 300 430 C329 430, 345 425, 363 405" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Eyes -->
+  <path d="M180 220 C180 185, 215 170, 245 185 C260 192, 268 208, 270 225 C244 248, 209 245, 180 220 Z" fill="#ffffff"/>
+  <path d="M420 220 C420 185, 385 170, 355 185 C340 192, 332 208, 330 225 C356 248, 391 245, 420 220 Z" fill="#ffffff"/>
+  <ellipse cx="225" cy="225" rx="25" ry="26" fill="#000000"/>
+  <ellipse cx="375" cy="225" rx="25" ry="26" fill="#000000"/>
+  <circle cx="232" cy="218" r="7" fill="#ffffff"/>
+  <circle cx="368" cy="218" r="7" fill="#ffffff"/>
+
+  <!-- Whiskers -->
+  <g stroke="#000000" stroke-width="6" stroke-linecap="round">
+    <path d="M175 300 L100 275"/>
+    <path d="M175 315 L95 315"/>
+    <path d="M175 330 L105 355"/>
+    <path d="M425 300 L505 275"/>
+    <path d="M425 315 L505 315"/>
+    <path d="M425 330 L495 355"/>
+  </g>
+
+  <!-- Center stripe / cheeks -->
+  <path d="M300 80 L320 245 L300 500 L280 245 Z" fill="#ffffff"/>
+  <path d="M190 270 C210 290, 230 300, 260 300 L280 260 L250 200 C220 210, 205 230, 190 270 Z" fill="#ffffff"/>
+  <path d="M410 270 C390 290, 370 300, 340 300 L320 260 L350 200 C380 210, 395 230, 410 270 Z" fill="#ffffff"/>
+</svg>
